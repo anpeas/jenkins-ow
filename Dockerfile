@@ -3,5 +3,5 @@
 #directorio "DocumentRoot"
 FROM nginx:latest
 # Copiamos el contenido a ejecutar al "DocumentRoot" definido en la plantilla de engine
-COPY startbootstrap-resume-gh-pages /user/share/nginx/html
+COPY startbootstrap-resume-gh-pages /usr/share/nginx/html
 EXPOSE 80
