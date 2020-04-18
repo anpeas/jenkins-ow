@@ -10,8 +10,8 @@ pipeline {
     stage('Test') {
       steps {
         echo 'TEST'
-        sh '/binc/nc -vz localhost 22'
-        sh '/binc/nc -vz localhost 80'
+        sh '/bin/nc -vz localhost 22'
+        sh '/bin/nc -vz localhost 80'
       }
     }
 
