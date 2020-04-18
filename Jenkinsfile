@@ -15,6 +15,7 @@ pipeline {
          --rm: Removes container after stop */
         sh 'docker run --rm --name app -id -p 80:80 app:test'
         // Test app is runnning (port 80 is used by app)
+        sh 'docker ps'
         sh '/bin/nc -vz localhost 80'
       }
       post{
