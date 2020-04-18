@@ -31,13 +31,13 @@ pipeline {
       steps {
         //Credentials to access dockerhub
         withCredentials([usernamePassword(credentialsId: 'anpeas_dh', passwordVariable: 'passwd_dh', usernameVariable: 'user_dh')]) {
+        sh 'docker login -u $user_dh -p $passwd_dh'
         /* change tag to new state
            anpeas is the dockerhub username*/
-        sh 'docker tag app:test anpeas/app:stable'
+        sh 'docker tag app:test app:stable'
         // Dockerhub is default server
         sh 'docker push anpeas/app:stable'
         }
-
       }
     }
   }
